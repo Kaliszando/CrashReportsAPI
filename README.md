@@ -7,13 +7,16 @@ in Montgomery.
 ## Run API localy
 
 ```
+cd server
+npm install
 npm start
 ```
 
 ## Run API on Docker
 
 ```
-docker build -t docker-crash-reports-api
+cd server
+docker build -t docker-crash-reports-api .
 docker run -dp 9000:3000 docker-crash-reports-api
 ```
 
