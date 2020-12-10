@@ -42,7 +42,9 @@ const ReportSchema = mongoose.Schema({
     intersection_type: String,
     road_alignment: String,
     road_condition: String,
-    road_division: String
+    road_division: String,
+    latitude: Number,
+    longitude: Number
 })
 
 module.exports = mongoose.model('Report', ReportSchema)

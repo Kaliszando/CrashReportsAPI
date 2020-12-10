@@ -2,10 +2,10 @@ const express = require('express');
 const router = express.Router();
 const Report = require('../models/Report');
 
-// GET all
+// GET all id
 router.get('/', async (req, res) => {
     try{
-        const reports = await Report.find();
+        const reports = await Report.find({}, { _id: true });
         res.json(reports);
     }  catch(err) {
         res.json({ message: err })
@@ -48,7 +48,9 @@ router.post('/', async (req, res) => {
         intersection_type: req.body.intersection_type,
         road_alignment: req.body.road_alignment,
         road_condition: req.body.road_condition,
-        road_division: req.road_division
+        road_division: req.road_division,
+        latitude: req.body.latitude,
+        longitude: req.body.longitude
     });
 
     try {
